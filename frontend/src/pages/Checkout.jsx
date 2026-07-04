@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import TopAppBar from '../components/TopAppBar.jsx';
+import { rememberOrder } from './TrackOrder.jsx';
 import BottomNav from '../components/BottomNav.jsx';
 import { useCart } from '../context/CartContext.jsx';
 import { api, imageUrl } from '../api/client.js';
@@ -33,6 +34,7 @@ export default function Checkout() {
         paymentMethod: payment,
         items: items.map((i) => ({ productId: i.id, quantity: i.quantity })),
       });
+      rememberOrder(res.orderNumber);
       setOrder(res);
       clear();
     } catch (e) {
@@ -55,9 +57,14 @@ export default function Checkout() {
             <p className="font-body-md text-on-surface-variant">
               {t('checkout.successText')} <span className="font-bold text-on-surface">{order.orderNumber}</span>
             </p>
-            <button onClick={() => navigate('/')} className="mt-6 bg-primary text-on-primary font-body-lg font-bold py-3 px-6 rounded-full hover:bg-primary/90 transition-colors">
-              {t('checkout.backToShop')}
-            </button>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+              <button onClick={() => navigate('/orders')} className="bg-primary text-on-primary font-body-lg font-bold py-3 px-6 rounded-full hover:bg-primary/90 transition-colors">
+                {t('checkout.trackOrder')}
+              </button>
+              <button onClick={() => navigate('/')} className="border border-primary text-primary font-body-lg font-bold py-3 px-6 rounded-full hover:bg-primary-container/20 transition-colors">
+                {t('checkout.backToShop')}
+              </button>
+            </div>
           </div>
         </main>
         <BottomNav />

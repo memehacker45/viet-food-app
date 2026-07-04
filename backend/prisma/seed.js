@@ -3,10 +3,10 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const categories = [
-  { slug: 'gemuese',   nameDe: 'Gemüse',   nameVi: 'Rau củ',     sortOrder: 1 },
-  { slug: 'nudeln',    nameDe: 'Nudeln',   nameVi: 'Mì & Phở',   sortOrder: 2 },
-  { slug: 'saucen',    nameDe: 'Saucen',   nameVi: 'Nước chấm',  sortOrder: 3 },
-  { slug: 'getraenke', nameDe: 'Getränke', nameVi: 'Đồ uống',    sortOrder: 4 },
+  { slug: 'gemuese',   nameDe: 'Gemüse',   nameVi: 'Rau củ', nameEn: 'Vegetables',     sortOrder: 1 },
+  { slug: 'nudeln',    nameDe: 'Nudeln',   nameVi: 'Mì & Phở', nameEn: 'Noodles',   sortOrder: 2 },
+  { slug: 'saucen',    nameDe: 'Saucen',   nameVi: 'Nước chấm', nameEn: 'Sauces',  sortOrder: 3 },
+  { slug: 'getraenke', nameDe: 'Getränke', nameVi: 'Đồ uống', nameEn: 'Drinks',    sortOrder: 4 },
 ];
 
 // categoryId wird nach dem Anlegen der Kategorien gesetzt
@@ -14,6 +14,7 @@ const products = [
   {
     slug: 'frische-kraeutermischung', cat: 'gemuese',
     nameDe: 'Frische Kräutermischung', nameVi: 'Rau thơm tổng hợp',
+    nameEn: 'Fresh Herb Mix',
     subtitleDe: 'Frische Kräutermischung (100g)', subtitleVi: 'Rau thơm tổng hợp (100g)',
     descriptionDe: 'Eine handverlesene Mischung aus thailändischem Basilikum, Minze und Koriander – perfekt für Pho und frische Frühlingsrollen.',
     descriptionVi: 'Hỗn hợp húng quế, bạc hà và ngò rí tuyển chọn — hoàn hảo cho phở và gỏi cuốn.',
@@ -23,6 +24,7 @@ const products = [
   {
     slug: 'bio-reisnudeln', cat: 'nudeln',
     nameDe: 'Bio-Reisnudeln', nameVi: 'Bún gạo hữu cơ',
+    nameEn: 'Organic Rice Noodles',
     subtitleDe: 'Bio-Reisnudeln (500g)', subtitleVi: 'Bún gạo hữu cơ (500g)',
     descriptionDe: 'Glutenfreie Reisnudeln aus biologischem Anbau, ideal für Suppen und Pfannengerichte.',
     descriptionVi: 'Bún gạo hữu cơ không gluten, lý tưởng cho món nước và món xào.',
@@ -32,6 +34,7 @@ const products = [
   {
     slug: 'premium-fischsauce', cat: 'saucen',
     nameDe: 'Premium-Fischsauce', nameVi: 'Nước mắm thượng hạng',
+    nameEn: 'Premium Fish Sauce',
     subtitleDe: 'Premium-Fischsauce (40°N)', subtitleVi: 'Nước mắm (40 đạm)',
     descriptionDe: 'Traditionell fermentierte Fischsauce mit 40°N Proteingehalt – das Herz der vietnamesischen Küche.',
     descriptionVi: 'Nước mắm lên men truyền thống 40 độ đạm — linh hồn của ẩm thực Việt.',
@@ -41,6 +44,7 @@ const products = [
   {
     slug: 'eiskaffee-milch', cat: 'getraenke',
     nameDe: 'Eiskaffee mit Milch', nameVi: 'Cà phê sữa đá',
+    nameEn: 'Vietnamese Iced Milk Coffee',
     subtitleDe: 'Eiskaffee mit Milch in Dosen (6x200ml)', subtitleVi: 'Cà phê sữa lon (6x200ml)',
     descriptionDe: 'Cremiger vietnamesischer Eiskaffee mit gezuckerter Kondensmilch, im praktischen 6er-Pack.',
     descriptionVi: 'Cà phê sữa đá béo ngậy với sữa đặc, lốc 6 lon tiện lợi.',
@@ -50,6 +54,7 @@ const products = [
   {
     slug: 'bio-thai-basilikum', cat: 'gemuese',
     nameDe: 'Bio-Thai-Basilikum', nameVi: 'Húng quế hữu cơ',
+    nameEn: 'Organic Thai Basil',
     subtitleDe: 'Húng Quế • 50g Bund • Herkunft: Vietnam', subtitleVi: 'Húng Quế • bó 50g • Việt Nam',
     descriptionDe: 'Unverzichtbar für die authentische vietnamesische Küche. Unser Bio-Thai-Basilikum zeichnet sich durch charakteristische violette Stängel und dunkelgrüne Blätter aus. Es liefert einen robusten, leicht würzigen Geschmack mit deutlichen Noten von Anis und Lakritz, entscheidend für Pho und frische Frühlingsrollen.',
     descriptionVi: 'Không thể thiếu trong ẩm thực Việt đích thực. Húng quế hữu cơ với thân tím đặc trưng và lá xanh đậm, vị nồng nhẹ thoảng hồi và cam thảo, thiết yếu cho phở và gỏi cuốn.',
@@ -59,6 +64,7 @@ const products = [
   {
     slug: 'frisches-thai-basilikum', cat: 'gemuese',
     nameDe: 'Frisches Thai-Basilikum', nameVi: 'Húng quế tươi',
+    nameEn: 'Fresh Thai Basil',
     subtitleDe: 'Frisches Thai-Basilikum (100g)', subtitleVi: 'Húng quế tươi (100g)',
     descriptionDe: 'Aromatisches frisches Thai-Basilikum, mit Kühlakkus verpackt für maximale Frische bei der Lieferung.',
     descriptionVi: 'Húng quế tươi thơm, đóng gói kèm đá gel giữ độ tươi khi giao hàng.',
@@ -68,6 +74,7 @@ const products = [
   {
     slug: 'premium-pho-nudeln', cat: 'nudeln',
     nameDe: 'Premium Pho-Nudeln', nameVi: 'Bánh phở thượng hạng',
+    nameEn: 'Premium Pho Noodles',
     subtitleDe: 'Premium Pho-Nudeln (400g)', subtitleVi: 'Bánh phở (400g)',
     descriptionDe: 'Breite, flache Reisnudeln speziell für die klassische Pho-Suppe.',
     descriptionVi: 'Bánh phở dẹt bản to, dành riêng cho món phở truyền thống.',
@@ -77,6 +84,7 @@ const products = [
   {
     slug: 'sriracha-chili', cat: 'saucen',
     nameDe: 'Sriracha Chili-Sauce', nameVi: 'Tương ớt Sriracha',
+    nameEn: 'Sriracha Chili Sauce',
     subtitleDe: 'Sriracha Chili-Sauce (250ml)', subtitleVi: 'Tương ớt Sriracha (250ml)',
     descriptionDe: 'Scharfe Chili-Knoblauch-Sauce, perfekt zum Verfeinern jeder Mahlzeit.',
     descriptionVi: 'Tương ớt tỏi cay, hoàn hảo để tăng vị cho mọi món ăn.',
@@ -86,6 +94,7 @@ const products = [
   {
     slug: 'instant-pho-suppe', cat: 'nudeln',
     nameDe: 'Instant Pho-Suppe', nameVi: 'Phở ăn liền',
+    nameEn: 'Instant Pho Soup',
     subtitleDe: 'Instant Pho-Suppe (75g)', subtitleVi: 'Phở ăn liền (75g)',
     descriptionDe: 'Authentischer Pho-Geschmack in 5 Minuten – ideal für unterwegs.',
     descriptionVi: 'Hương vị phở đích thực trong 5 phút — tiện cho mọi lúc.',
@@ -95,6 +104,7 @@ const products = [
   {
     slug: 'kokosnusswasser', cat: 'getraenke',
     nameDe: 'Kokosnusswasser', nameVi: 'Nước dừa',
+    nameEn: 'Coconut Water',
     subtitleDe: 'Kokosnusswasser (330ml)', subtitleVi: 'Nước dừa (330ml)',
     descriptionDe: 'Erfrischendes, natürliches Kokosnusswasser ohne Zuckerzusatz.',
     descriptionVi: 'Nước dừa tự nhiên mát lạnh, không thêm đường.',
@@ -104,6 +114,7 @@ const products = [
   {
     slug: 'frischer-koriander', cat: 'gemuese',
     nameDe: 'Frischer Koriander', nameVi: 'Ngò rí tươi',
+    nameEn: 'Fresh Coriander',
     subtitleDe: 'Frischer Koriander (50g)', subtitleVi: 'Ngò rí tươi (50g)',
     descriptionDe: 'Frischer, aromatischer Koriander – unverzichtbar als Garnierung.',
     descriptionVi: 'Ngò rí tươi thơm — không thể thiếu để trang trí món ăn.',
@@ -113,6 +124,12 @@ const products = [
 ];
 
 async function main() {
+  // KHÓA AN TOÀN: database đã có dữ liệu thì bỏ qua, tránh xóa nhầm đơn hàng thật.
+  // Muốn xóa sạch và nạp lại data mẫu: node prisma/seed.js --force
+  if ((await prisma.category.count()) > 0 && !process.argv.includes('--force')) {
+    console.log('⏭  Bỏ qua seed: database đã có dữ liệu. (Reset: node prisma/seed.js --force)');
+    return;
+  }
   console.log('Seeding…');
   await prisma.supportMessage.deleteMany();
   await prisma.orderItem.deleteMany();

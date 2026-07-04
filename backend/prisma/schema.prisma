@@ -14,6 +14,7 @@ model Category {
   slug      String    @unique
   nameDe    String
   nameVi    String
+  nameEn    String?
   sortOrder Int       @default(0)
   products  Product[]
 }
@@ -23,10 +24,13 @@ model Product {
   slug          String      @unique
   nameDe        String
   nameVi        String
+  nameEn        String?
   subtitleDe    String?
   subtitleVi    String?
+  subtitleEn    String?
   descriptionDe String?
   descriptionVi String?
+  descriptionEn String?
   origin        String?     // Herkunft, z.B. "Vietnam"
   unit          String?     // z.B. "100g", "500g"
   price         Float       // EUR

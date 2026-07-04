@@ -6,7 +6,8 @@ export default function TopAppBar({ showBack = false, rightLabel = null }) {
   const navigate = useNavigate();
 
   const toggleLang = () => {
-    const next = i18n.language === 'de' ? 'vi' : 'de';
+    const cycle = { de: 'vi', vi: 'en', en: 'de' };
+    const next = cycle[i18n.language] || 'de';
     i18n.changeLanguage(next);
     localStorage.setItem('lang', next);
     document.documentElement.lang = next;

@@ -1,6 +1,12 @@
 {
   "brand": "VIET FOOD GMBH",
-  "nav": { "home": "Startseite", "shop": "Einkaufen", "chat": "Chat", "profile": "Profil" },
+  "nav": {
+    "home": "Startseite",
+    "shop": "Einkaufen",
+    "chat": "Chat",
+    "profile": "Profil",
+    "orders": "Bestellungen"
+  },
   "shop": {
     "searchPlaceholder": "Frische Lebensmittel, Nudeln suchen...",
     "heroTitle": "Tradition schmecken",
@@ -20,7 +26,10 @@
     "info": "Produktinformationen",
     "addToCart": "In den Warenkorb",
     "inCart": "Im Warenkorb",
-    "badges": { "bio": "Bio-zertifiziert", "fresh": "Frisch eingeflogen" }
+    "badges": {
+      "bio": "Bio-zertifiziert",
+      "fresh": "Frisch eingeflogen"
+    }
   },
   "checkout": {
     "title": "Sicherer Checkout",
@@ -46,7 +55,8 @@
     "emptyCart": "Ihr Warenkorb ist leer.",
     "successTitle": "Vielen Dank für Ihre Bestellung!",
     "successText": "Ihre Bestellnummer lautet",
-    "backToShop": "Weiter einkaufen"
+    "backToShop": "Weiter einkaufen",
+    "trackOrder": "Bestellung verfolgen"
   },
   "support": {
     "agent": "Viet Food GmbH Assistent",
@@ -55,5 +65,23 @@
     "today": "Heute",
     "inOrder": "In Bestellung #VF-8492 enthalten"
   },
-  "lang": "DE"
+  "lang": "DE",
+  "orders": {
+    "title": "Bestellung verfolgen",
+    "hint": "Geben Sie die Bestellnummer aus Ihrer Bestätigung ein, z.B. VF-1234.",
+    "placeholder": "VF-1234",
+    "search": "Nachschlagen",
+    "notFound": "Bestellung nicht gefunden. Bitte prüfen Sie die Nummer.",
+    "recent": "Ihre letzten Bestellungen",
+    "placedOn": "Bestellt am",
+    "items": "Artikel",
+    "shipTo": "Lieferung an",
+    "status": {
+      "pending": "Eingegangen",
+      "paid": "Bestätigt",
+      "shipped": "Unterwegs",
+      "delivered": "Zugestellt",
+      "cancelled": "Storniert"
+    }
+  }
 }

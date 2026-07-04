@@ -1,6 +1,12 @@
 {
   "brand": "VIET FOOD GMBH",
-  "nav": { "home": "Trang chủ", "shop": "Mua sắm", "chat": "Trò chuyện", "profile": "Hồ sơ" },
+  "nav": {
+    "home": "Trang chủ",
+    "shop": "Mua sắm",
+    "chat": "Trò chuyện",
+    "profile": "Hồ sơ",
+    "orders": "Đơn hàng"
+  },
   "shop": {
     "searchPlaceholder": "Tìm thực phẩm tươi, mì...",
     "heroTitle": "Nếm vị truyền thống",
@@ -20,7 +26,10 @@
     "info": "Thông tin sản phẩm",
     "addToCart": "Thêm vào giỏ",
     "inCart": "Trong giỏ",
-    "badges": { "bio": "Chứng nhận hữu cơ", "fresh": "Tươi nhập khẩu" }
+    "badges": {
+      "bio": "Chứng nhận hữu cơ",
+      "fresh": "Tươi nhập khẩu"
+    }
   },
   "checkout": {
     "title": "Thanh toán an toàn",
@@ -46,7 +55,8 @@
     "emptyCart": "Giỏ hàng của bạn đang trống.",
     "successTitle": "Cảm ơn bạn đã đặt hàng!",
     "successText": "Mã đơn hàng của bạn là",
-    "backToShop": "Tiếp tục mua sắm"
+    "backToShop": "Tiếp tục mua sắm",
+    "trackOrder": "Theo dõi đơn hàng"
   },
   "support": {
     "agent": "Trợ lý Viet Food GmbH",
@@ -55,5 +65,23 @@
     "today": "Hôm nay",
     "inOrder": "Có trong đơn #VF-8492"
   },
-  "lang": "VI"
+  "lang": "VI",
+  "orders": {
+    "title": "Tra cứu đơn hàng",
+    "hint": "Nhập mã đơn trong xác nhận của bạn, ví dụ VF-1234.",
+    "placeholder": "VF-1234",
+    "search": "Tra cứu",
+    "notFound": "Không tìm thấy đơn. Vui lòng kiểm tra lại mã.",
+    "recent": "Đơn gần đây của bạn",
+    "placedOn": "Đặt ngày",
+    "items": "Món",
+    "shipTo": "Giao đến",
+    "status": {
+      "pending": "Đã nhận đơn",
+      "paid": "Đã xác nhận",
+      "shipped": "Đang giao",
+      "delivered": "Đã giao",
+      "cancelled": "Đã hủy"
+    }
+  }
 }

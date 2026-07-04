@@ -1,0 +1,78 @@
+{
+  "brand": "VIET FOOD GMBH",
+  "nav": { "home": "Home", "shop": "Cart", "chat": "Chat", "profile": "Profile", "orders": "Orders" },
+  "shop": {
+    "searchPlaceholder": "Search fresh groceries, noodles...",
+    "heroTitle": "Taste of Tradition",
+    "heroText": "Premium authentic Vietnamese ingredients for your kitchen. Fresh vegetables, rich sauces and everyday essentials.",
+    "all": "All",
+    "popular": "Popular items",
+    "empty": "No products found."
+  },
+  "product": {
+    "back": "Back",
+    "favorite": "Favorite",
+    "share": "Share",
+    "soldOut": "Sold out",
+    "notifyTitle": "Notify when available",
+    "notifyText": "We will send you a notification as soon as this item is back in stock.",
+    "notifyAction": "Enable",
+    "info": "Product information",
+    "addToCart": "Add to cart",
+    "inCart": "In cart",
+    "badges": { "bio": "Certified organic", "fresh": "Freshly flown in" }
+  },
+  "checkout": {
+    "title": "Secure Checkout",
+    "shipping": "Delivery address",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "address": "Street and house number",
+    "city": "City",
+    "zip": "Postal code",
+    "phone": "Phone number",
+    "payment": "Payment method",
+    "paypal": "PayPal",
+    "card": "Visa / Mastercard",
+    "cod": "Cash on delivery",
+    "codHint": "(pay in cash upon delivery)",
+    "summary": "Order summary",
+    "qty": "Qty",
+    "subtotal": "Subtotal",
+    "shippingFee": "Shipping",
+    "total": "Total",
+    "placeOrder": "Place order",
+    "secure": "Secure, encrypted checkout.",
+    "emptyCart": "Your cart is empty.",
+    "successTitle": "Thank you for your order!",
+    "successText": "Your order number is",
+    "backToShop": "Continue shopping",
+    "trackOrder": "Track my order"
+  },
+  "support": {
+    "agent": "Viet Food GmbH Assistant",
+    "online": "Online",
+    "inputPlaceholder": "Write a message...",
+    "today": "Today",
+    "inOrder": "Included in order #VF-8492"
+  },
+  "orders": {
+    "title": "Track your order",
+    "hint": "Enter the order number from your confirmation, e.g. VF-1234.",
+    "placeholder": "VF-1234",
+    "search": "Look up",
+    "notFound": "Order not found. Please check the number.",
+    "recent": "Your recent orders",
+    "placedOn": "Placed on",
+    "items": "Items",
+    "shipTo": "Delivery to",
+    "status": {
+      "pending": "Received",
+      "paid": "Confirmed",
+      "shipped": "On its way",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled"
+    }
+  },
+  "lang": "EN"
+}

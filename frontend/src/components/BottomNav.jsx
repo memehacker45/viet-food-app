@@ -44,6 +44,7 @@ export default function BottomNav() {
     <nav className="bg-surface/95 backdrop-blur-lg fixed bottom-0 left-0 w-full rounded-t-xl z-50 shadow-[0_-4px_12px_rgba(0,0,0,0.04)] flex justify-around items-center px-4 pt-base pb-safe-offset-4 border-t border-outline-variant/10">
       <Item to="/" icon="home" label={t('nav.home')} />
       <Item to="/checkout" icon="shopping_basket" label={t('nav.shop')} badge={count} />
+      <Item to="/orders" icon="receipt_long" label={t('nav.orders')} />
       <Item to="/support" icon="chat_bubble" label={t('nav.chat')} />
       {/* Tab Profile tạm ẩn: chưa có trang /profile. Khi nào làm xong trang Profile thì mở lại dòng dưới.
       <Item to="/profile" icon="person" label={t('nav.profile')} /> */}

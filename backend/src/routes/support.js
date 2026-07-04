@@ -17,13 +17,18 @@ router.post('/:sessionId/messages', async (req, res) => {
   const { body, sender = 'user', productId = null } = req.body;
   if (!body) return res.status(400).json({ error: 'Nachricht darf nicht leer sein.' });
 
+  const isFirst = (await prisma.supportMessage.count({ where: { sessionId } })) === 0;
   await prisma.supportMessage.create({ data: { sessionId, sender, body, productId } });
 
+  // Chỉ gửi 1 tin xác nhận tự động cho TIN NHẮN ĐẦU TIÊN của khách.
+  // Các tin sau do admin trả lời thật qua web admin (sender: 'agent').
   let agent = null;
-  if (sender === 'user') {
-    const reply = autoReply(body);
+  if (sender === 'user' && isFirst) {
     agent = await prisma.supportMessage.create({
-      data: { sessionId, sender: 'agent', body: reply },
+      data: {
+        sessionId, sender: 'agent',
+        body: 'Vielen Dank für Ihre Nachricht! Wir melden uns so schnell wie möglich bei Ihnen. / Cảm ơn bạn đã nhắn tin! Chúng tôi sẽ trả lời sớm nhất có thể.',
+      },
     });
   }
 
@@ -33,15 +38,5 @@ router.post('/:sessionId/messages', async (req, res) => {
   res.status(201).json({ messages: msgs, agentReply: agent });
 });
 
-function autoReply(text) {
-  const t = text.toLowerCase();
-  if (t.includes('bestell') || t.includes('order') || t.includes('vf-'))
-    return 'Ich schaue sofort für Sie nach. Ihre Bestellung befindet sich in der Zustellung und sollte heute zwischen 14:00 und 16:00 Uhr eintreffen.';
-  if (t.includes('lager') || t.includes('verfügbar') || t.includes('ausverkauft'))
-    return 'Gerne prüfe ich die Verfügbarkeit. Möchten Sie benachrichtigt werden, sobald der Artikel wieder auf Lager ist?';
-  if (t.includes('liefer') || t.includes('versand'))
-    return 'Wir liefern innerhalb von 1–2 Werktagen. Frische Kräuter werden mit Kühlakkus verpackt.';
-  return 'Vielen Dank für Ihre Nachricht! Ein Mitarbeiter kümmert sich gleich darum. Kann ich sonst noch etwas für Sie tun?';
-}
 
 module.exports = router;
