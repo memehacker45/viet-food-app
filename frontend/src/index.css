@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    @apply text-on-surface antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    /* Native-Feel: kein blauer Tap-Highlight, kein Bounce-Overscroll */
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: none;
+    /* Subtiles Punktmuster (aus Stitch) */
+    background-color: theme('colors.surface');
+    background-image: radial-gradient(theme('colors.outline-variant') 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    background-position: 0 0;
+    background-attachment: fixed;
+  }
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.icon-fill {
+  font-variation-settings: 'FILL' 1;
+}
+
+/* Horizontale Chips ohne Scrollbar */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Heritage-Muster im Chat-Hintergrund */
+.bg-heritage-pattern {
+  background-image: radial-gradient(#bfc9c1 1px, transparent 1px);
+  background-size: 16px 16px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Safe-Area fuer iOS Notch / Home-Indicator */
+.pb-safe-offset-4 { padding-bottom: calc(env(safe-area-inset-bottom) + 1rem); }
+.pt-safe { padding-top: calc(env(safe-area-inset-top) + 0.5rem); }
+.top-safe { top: env(safe-area-inset-top); }

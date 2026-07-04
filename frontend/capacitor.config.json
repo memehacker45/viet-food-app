@@ -1,0 +1,20 @@
+{
+  "appId": "com.vietfood.app",
+  "appName": "Viet Food GmbH",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 1200,
+      "backgroundColor": "#c6e4e4",
+      "showSpinner": false,
+      "androidScaleType": "CENTER_CROP"
+    },
+    "StatusBar": {
+      "style": "LIGHT",
+      "backgroundColor": "#f8f9fa"
+    }
+  }
+}

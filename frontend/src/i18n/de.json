@@ -1,0 +1,59 @@
+{
+  "brand": "VIET FOOD GMBH",
+  "nav": { "home": "Startseite", "shop": "Einkaufen", "chat": "Chat", "profile": "Profil" },
+  "shop": {
+    "searchPlaceholder": "Frische Lebensmittel, Nudeln suchen...",
+    "heroTitle": "Tradition schmecken",
+    "heroText": "Hochwertige authentische vietnamesische Zutaten für Ihre Küche. Frisches Gemüse, reichhaltige Saucen und Dinge des täglichen Bedarfs.",
+    "all": "Alle",
+    "popular": "Beliebte Artikel",
+    "empty": "Keine Produkte gefunden."
+  },
+  "product": {
+    "back": "Zurück",
+    "favorite": "Favorit",
+    "share": "Teilen",
+    "soldOut": "Ausverkauft",
+    "notifyTitle": "Benachrichtigen, wenn verfügbar",
+    "notifyText": "Wir senden Ihnen eine Benachrichtigung, wenn dieser Artikel wieder auf Lager ist.",
+    "notifyAction": "Aktivieren",
+    "info": "Produktinformationen",
+    "addToCart": "In den Warenkorb",
+    "inCart": "Im Warenkorb",
+    "badges": { "bio": "Bio-zertifiziert", "fresh": "Frisch eingeflogen" }
+  },
+  "checkout": {
+    "title": "Sicherer Checkout",
+    "shipping": "Lieferadresse",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "address": "Straße und Hausnummer",
+    "city": "Stadt",
+    "zip": "Postleitzahl",
+    "phone": "Telefonnummer",
+    "payment": "Zahlungsmethode",
+    "paypal": "PayPal",
+    "card": "Visa / Mastercard",
+    "cod": "Nachnahme",
+    "codHint": "(Barzahlung bei Lieferung)",
+    "summary": "Bestellübersicht",
+    "qty": "Menge",
+    "subtotal": "Zwischensumme",
+    "shippingFee": "Versand",
+    "total": "Gesamtsumme",
+    "placeOrder": "Bestellung aufgeben",
+    "secure": "Sicherer, verschlüsselter Bezahlvorgang.",
+    "emptyCart": "Ihr Warenkorb ist leer.",
+    "successTitle": "Vielen Dank für Ihre Bestellung!",
+    "successText": "Ihre Bestellnummer lautet",
+    "backToShop": "Weiter einkaufen"
+  },
+  "support": {
+    "agent": "Viet Food GmbH Assistent",
+    "online": "Online",
+    "inputPlaceholder": "Nachricht schreiben...",
+    "today": "Heute",
+    "inOrder": "In Bestellung #VF-8492 enthalten"
+  },
+  "lang": "DE"
+}

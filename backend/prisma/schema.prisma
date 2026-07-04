@@ -1,0 +1,118 @@
+// Viet Food GmbH — Datenbankschema (SQLite via Prisma)
+// Bảng: categories, products, customers, carts(+items), orders(+items), support messages
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  slug      String    @unique
+  nameDe    String
+  nameVi    String
+  sortOrder Int       @default(0)
+  products  Product[]
+}
+
+model Product {
+  id            Int         @id @default(autoincrement())
+  slug          String      @unique
+  nameDe        String
+  nameVi        String
+  subtitleDe    String?
+  subtitleVi    String?
+  descriptionDe String?
+  descriptionVi String?
+  origin        String?     // Herkunft, z.B. "Vietnam"
+  unit          String?     // z.B. "100g", "500g"
+  price         Float       // EUR
+  oldPrice      Float?      // durchgestrichener Preis
+  image         String?     // Dateiname in /uploads/products
+  inStock       Boolean     @default(true)
+  badges        String?     // JSON-Array von Keys, z.B. ["bio","fresh"]
+  categoryId    Int
+  category      Category    @relation(fields: [categoryId], references: [id])
+  cartItems     CartItem[]
+  orderItems    OrderItem[]
+  createdAt     DateTime    @default(now())
+}
+
+model Customer {
+  id        Int      @id @default(autoincrement())
+  firstName String
+  lastName  String
+  email     String?  @unique
+  phone     String?
+  address   String?
+  city      String?
+  zip       String?
+  carts     Cart[]
+  orders    Order[]
+  createdAt DateTime @default(now())
+}
+
+model Cart {
+  id         String     @id @default(uuid()) // session-basiert, kein Login nötig
+  customerId Int?
+  customer   Customer?  @relation(fields: [customerId], references: [id])
+  items      CartItem[]
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+}
+
+model CartItem {
+  id        Int     @id @default(autoincrement())
+  cartId    String
+  cart      Cart    @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int     @default(1)
+
+  @@unique([cartId, productId])
+}
+
+model Order {
+  id            Int         @id @default(autoincrement())
+  orderNumber   String      @unique // z.B. "VF-8492"
+  customerId    Int?
+  customer      Customer?   @relation(fields: [customerId], references: [id])
+  // Snapshot der Lieferadresse
+  firstName     String
+  lastName      String
+  address       String
+  city          String
+  zip           String
+  phone         String?
+  paymentMethod String      // paypal | visa | cod
+  subtotal      Float
+  shipping      Float
+  total         Float
+  status        String      @default("pending") // pending|paid|shipped|delivered|cancelled
+  items         OrderItem[]
+  createdAt     DateTime    @default(now())
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId Int
+  product   Product @relation(fields: [productId], references: [id])
+  nameDe    String  // Snapshot des Namens
+  unit      String?
+  price     Float   // Snapshot des Preises
+  quantity  Int
+}
+
+model SupportMessage {
+  id        Int      @id @default(autoincrement())
+  sessionId String   // gruppiert eine Konversation
+  sender    String   // "user" | "agent"
+  body      String
+  productId Int?     // optionaler Produktbezug (z.B. "in Bestellung enthalten")
+  createdAt DateTime @default(now())
+}

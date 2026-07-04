@@ -1,0 +1,59 @@
+{
+  "brand": "VIET FOOD GMBH",
+  "nav": { "home": "Trang chủ", "shop": "Mua sắm", "chat": "Trò chuyện", "profile": "Hồ sơ" },
+  "shop": {
+    "searchPlaceholder": "Tìm thực phẩm tươi, mì...",
+    "heroTitle": "Nếm vị truyền thống",
+    "heroText": "Nguyên liệu Việt Nam đích thực, chất lượng cao cho gian bếp của bạn. Rau tươi, nước chấm đậm đà và đồ dùng hằng ngày.",
+    "all": "Tất cả",
+    "popular": "Sản phẩm phổ biến",
+    "empty": "Không tìm thấy sản phẩm."
+  },
+  "product": {
+    "back": "Quay lại",
+    "favorite": "Yêu thích",
+    "share": "Chia sẻ",
+    "soldOut": "Hết hàng",
+    "notifyTitle": "Báo khi có hàng",
+    "notifyText": "Chúng tôi sẽ thông báo cho bạn khi sản phẩm có lại.",
+    "notifyAction": "Bật",
+    "info": "Thông tin sản phẩm",
+    "addToCart": "Thêm vào giỏ",
+    "inCart": "Trong giỏ",
+    "badges": { "bio": "Chứng nhận hữu cơ", "fresh": "Tươi nhập khẩu" }
+  },
+  "checkout": {
+    "title": "Thanh toán an toàn",
+    "shipping": "Địa chỉ giao hàng",
+    "firstName": "Tên",
+    "lastName": "Họ",
+    "address": "Đường và số nhà",
+    "city": "Thành phố",
+    "zip": "Mã bưu chính",
+    "phone": "Số điện thoại",
+    "payment": "Phương thức thanh toán",
+    "paypal": "PayPal",
+    "card": "Visa / Mastercard",
+    "cod": "Thanh toán khi nhận hàng",
+    "codHint": "(Trả tiền mặt khi giao)",
+    "summary": "Tóm tắt đơn hàng",
+    "qty": "SL",
+    "subtotal": "Tạm tính",
+    "shippingFee": "Phí giao",
+    "total": "Tổng cộng",
+    "placeOrder": "Đặt hàng",
+    "secure": "Thanh toán mã hóa an toàn.",
+    "emptyCart": "Giỏ hàng của bạn đang trống.",
+    "successTitle": "Cảm ơn bạn đã đặt hàng!",
+    "successText": "Mã đơn hàng của bạn là",
+    "backToShop": "Tiếp tục mua sắm"
+  },
+  "support": {
+    "agent": "Trợ lý Viet Food GmbH",
+    "online": "Trực tuyến",
+    "inputPlaceholder": "Nhập tin nhắn...",
+    "today": "Hôm nay",
+    "inOrder": "Có trong đơn #VF-8492"
+  },
+  "lang": "VI"
+}
